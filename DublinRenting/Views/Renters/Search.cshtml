@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewBag.Title = "Search";
+}
+
+<h2>Search Renters by ID</h2>
+
+<div class="col-md-10">
+    <input type="text" id="RenterID" size="5" />
+    <input type="submit" name="SearchButton" id="SearchButton" value="Search" />
+</div>
+<br />
+<div id="divProcessing">
+    <p>Processing, please wait . . . <img src="../../Content/ajax-loader.gif" height="50"></p>
+</div>
+<br />
+<div id="divResult"></div>
+@Html.ActionLink("Back to List", "Index")
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $("#divProcessing").hide();
+            $('#SearchButton').click(function () {
+                search();
+            });
+        });
+
+        function search() {
+            $("#divResult").empty();
+            $("#divProcessing").show();
+            var renterID = $("#RenterID").val();
+            var url = "../api/Renters/" + renterID;
+            $.ajax({
+                url: url,
+                type: "GET",
+                dataType: "json",
+                success: function (resp) {
+                    if (resp.RenterID == null) {
+                        $("#divResult").append("This Renter was not Found, Please enter a valid Renter ID")
+                    }
+                    else {
+                        // Hide the "busy" gif:
+                        $("#divProcessing").hide();
+                        $("<h3>Results</h3>").appendTo("#divResult");
+                        $("#divResult").append("<p>RenterID: "+resp.RenterID+"<br/>First_Name: " + resp.First_Name + "<br/>Last_Name: " + resp.Last_Name + "<br/>Address: " + resp.Address + "<br/>Phone_No: " + resp.Phone_No + "<br/>Pref_Type: " + resp.Pref_Type + "<br/>Max_Rent: " + resp.Max_Rent + "<br/>");
+                        $("#divResult").append("</p>");
+                    }
+                }
+            })
+        }
+
+    </script>
+}

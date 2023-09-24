@@ -1,0 +1,62 @@
+﻿@model IEnumerable<DublinRenting.Models.Owner>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Owners</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<p>
+    @Html.ActionLink("Search", "Search")
+</p>
+
+<table class="table" id="newtable">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.OwnerID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Last_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.OwnerID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.First_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Last_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.OwnerID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.OwnerID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.OwnerID })
+        </td>
+    </tr>
+}
+
+</table>

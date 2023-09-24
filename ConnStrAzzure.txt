@@ -1,0 +1,1 @@
+Server=tcp:dublinrenting.database.windows.net,1433;Initial Catalog=DublinRenting;Persist Security Info=False;User ID=x16114515;Password=biancaDANUT2007;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;

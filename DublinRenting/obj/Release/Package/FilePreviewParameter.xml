@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="DublinRenting" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\danut\\Source\\Repos\\DublinRenting\\DublinRenting\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\danut\\Source\\Repos\\DublinRenting\\DublinRenting\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="DublinRentingContext-Web.config Connection String" description="" value="Server=tcp:dublinrenting.database.windows.net,1433;Initial Catalog=DublinRenting;Persist Security Info=False;User ID=x16114515;Password=biancaDANUT2007;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\danut\\Source\\Repos\\DublinRenting\\DublinRenting\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DublinRentingContext']/@connectionString" />
+  </parameter>
+  <parameter name="DefaultConnection-Web.config Connection String" description="" value="Server=tcp:dublinrenting.database.windows.net,1433;Initial Catalog=DublinRenting;Persist Security Info=False;User ID=x16114515;Password=biancaDANUT2007;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\danut\\Source\\Repos\\DublinRenting\\DublinRenting\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+</parameters>

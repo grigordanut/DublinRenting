@@ -1,0 +1,74 @@
+﻿@model IEnumerable<DublinRenting.Models.Viewing>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Viewings</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<p>
+    @Html.ActionLink("Search", "Search")
+</p>
+
+<table class="table" id="newtable">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ViewingID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Comments)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price_Offered)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PropertyForRentID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RenterID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StaffID)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ViewingID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Comments)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price_Offered)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PropertyForRentID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RenterID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StaffID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.ViewingID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.ViewingID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.ViewingID })
+        </td>
+    </tr>
+}
+
+</table>

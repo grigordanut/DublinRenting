@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewBag.Title = "Search";
+}
+
+<h2>Search Staffs by ID</h2>
+
+<div class="col-md-10">
+    <input type="text" id="StaffID" size="5" />
+    <input type="submit" name="SearchButton" id="SearchButton" value="Search" />
+</div>
+<br />
+<div id="divProcessing">
+    <p>Processing, please wait . . . <img src="../../Content/ajax-loader.gif" height="50"></p>
+</div>
+<br />
+<div id="divResult"></div>
+@Html.ActionLink("Back to List", "Index")
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $("#divProcessing").hide();
+            $('#SearchButton').click(function () {
+                search();
+            });
+        });
+
+        function search() {
+            $("#divResult").empty();
+            $("#divProcessing").show();
+            var staffID = $("#StaffID").val();
+            var url = "../api/Staffs/" + staffID;
+            $.ajax({
+                url: url,
+                type: "GET",
+                dataType: "json",
+                success: function (resp) {
+                    if (resp.StaffID == null) {
+                        $("#divResult").append("This Staff was not Found, Please enter a valid Staff ID")
+                    }
+                    else {
+                        // Hide the "busy" gif:
+                        $("#divProcessing").hide();
+                        $("<h3>Results</h3>").appendTo("#divResult");
+                        $("#divResult").append("<p>StaffID: "+resp.StaffID+"</br>First_Name: " + resp.First_Name + "<br/>Last_Name: " + resp.Last_Name + "<br/>Gender: " + resp.Gender + "<br/>Address: " + resp.Address + "<br/>Phone_No: " + resp.Phone_No + "<br/>Position: " + resp.Position + "<br/>Salary: " + resp.Salary + "<br/>BranchID: " + resp.BranchID + "<br/>");
+                        $("#divResult").append("</p>");
+                    }
+                }
+            })
+        }
+
+    </script>
+}
+
+

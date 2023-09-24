@@ -1,0 +1,68 @@
+﻿@model IEnumerable<DublinRenting.Models.Branch>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Branches</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<p>
+    @Html.ActionLink("Search", "Search")
+</p>
+
+<table class="table" id="newtable">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BranchID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Street)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Area)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.City)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Post_Code)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tel_No)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.BranchID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Street)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Area)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.City)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Post_Code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tel_No)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.BranchID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.BranchID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.BranchID })
+        </td>
+    </tr>
+}
+
+</table>

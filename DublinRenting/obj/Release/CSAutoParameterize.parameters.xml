@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DublinRentingContext-Web.config Connection String" description="DublinRentingContext Connection String used in web.config by the application to access the database." defaultValue="Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\aspnet-DublinRenting-20181216083640.mdf;Initial Catalog=aspnet-DublinRenting-20181216083640;Integrated Security=True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\danut\\Source\\Repos\\DublinRenting\\DublinRenting\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DublinRentingContext']/@connectionString" />
+  </parameter>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\aspnet-DublinRenting-20181216083640.mdf;Initial Catalog=aspnet-DublinRenting-20181216083640;Integrated Security=True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\danut\\Source\\Repos\\DublinRenting\\DublinRenting\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="DublinRentingContext_DatabasePublish-Web.config Connection String" description="DublinRentingContext_DatabasePublish Connection String used in web.config by the application to access the database." defaultValue="DublinRentingContext_DatabasePublish.ConnetionString" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\danut\\Source\\Repos\\DublinRenting\\DublinRenting\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DublinRentingContext_DatabasePublish']/@connectionString" />
+  </parameter>
+</parameters>

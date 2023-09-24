@@ -1,0 +1,66 @@
+﻿@model DublinRenting.Models.Viewing
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Viewing</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Comments)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comments)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price_Offered)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price_Offered)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PropertyForRentID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PropertyForRentID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RenterID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RenterID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StaffID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StaffID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ViewingID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
